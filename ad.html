@@ -1,51 +1,31 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Auto Ad Test</title>
 
-  
-
-  <!-- Monetag SDK script in head -->
-
-  <script src="https://libtl.com/sdk.js" data-zone="9727516" data-sdk="show_9727516"></script>
-
+  <!-- Monetag SDK script -->
+  <script src="https://libtl.com/sdk.js" 
+          data-zone="9727516" 
+          data-sdk="show_9727516"></script>
 </head>
-
 <body>
-
-  <h2>ad</h2>
+  <h2 style="text-align:center;">Loading ad...</h2>
 
   <script>
-
-    //ا
-
-    window.onload = function() {
-
-      show_9727516().then(() => {
-
-        // Reward function after ad watched
-
-        alert('You have seen an ad!');
-
-      }).catch((err) => {
-
-        console.error("Ad failed:", err);
-
-        alert("Ad failed to load. Check console for details.");
-
-      });
-
-    }
-
+    // Auto-run ad without confirmation
+    document.addEventListener("DOMContentLoaded", () => {
+      show_9727516()
+        .then(() => {
+          // Reward function
+          alert("Ad finished! Reward granted.");
+        })
+        .catch((err) => {
+          console.error("Ad failed:", err);
+          document.body.innerHTML += "<p style='color:red;'>Ad failed to load.</p>";
+        });
+    });
   </script>
-
 </body>
-
 </html>
