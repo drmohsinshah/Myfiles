@@ -1,28 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monetag Rewarded Ad Test</title>
+
+  <title>Auto Ad Test</title>
+
   
+
   <!-- Monetag SDK script in head -->
+
   <script src="https://libtl.com/sdk.js" data-zone="9727516" data-sdk="show_9727516"></script>
+
 </head>
+
 <body>
-  <h2>Monetag Rewarded Interstitial Test</h2>
-  <button onclick="showAd()">Show Rewarded Ad</button>
+
+  <h2>ad</h2>
 
   <script>
-    // Rewarded interstitial code
-    function showAd() {
+
+    //ا
+
+    window.onload = function() {
+
       show_9727516().then(() => {
+
         // Reward function after ad watched
+
         alert('You have seen an ad!');
+
       }).catch((err) => {
+
         console.error("Ad failed:", err);
+
         alert("Ad failed to load. Check console for details.");
+
       });
+
     }
+
   </script>
+
 </body>
+
 </html>
