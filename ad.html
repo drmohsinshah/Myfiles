@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Auto Ad Test</title>
+  <title>Ad Page</title>
 
   <!-- Monetag SDK script -->
   <script src="https://libtl.com/sdk.js" 
@@ -11,20 +11,19 @@
           data-sdk="show_9727516"></script>
 </head>
 <body>
-  <h2 style="text-align:center;">Loading ad...</h2>
+  <h2 style="text-align:center;">Interstitial Ad Loading...</h2>
 
   <script>
-    // Auto-run ad without confirmation
-    document.addEventListener("DOMContentLoaded", () => {
-      show_9727516()
-        .then(() => {
-          // Reward function
-          alert("Ad finished! Reward granted.");
-        })
-        .catch((err) => {
-          console.error("Ad failed:", err);
-          document.body.innerHTML += "<p style='color:red;'>Ad failed to load.</p>";
-        });
+    // In-App Interstitial
+    show_9727516({
+      type: 'inApp',
+      inAppSettings: {
+        frequency: 2,
+        capping: 0.1,
+        interval: 30,
+        timeout: 5,
+        everyPage: false
+      }
     });
   </script>
 </body>
