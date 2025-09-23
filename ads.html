@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Page</title>
+  <script src="https://adexora.com/cdn/ads.js?id=85"></script>
+</head>
+<body>
+  <h3 style="text-align:center;">Loading Ad...</h3>
+
+  <script>
+    window.showAdexora()
+      .then(() => {
+        console.log("✅ Ad shown successfully");
+      })
+      .catch(e => {
+        console.error("❌ Error showing ad:", e);
+      });
+  </script>
+</body>
+</html>
